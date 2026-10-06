@@ -11,7 +11,7 @@ JDK 17 ou supérieur et Maven 3.9 ou supérieur. Le projet a été développé e
     mvn spring-boot:run     # démarre l'API sur http://localhost:8080
     mvn test                # exécute les tests automatisés
 
-Les données sont conservées en mémoire et sont perdues à l'arrêt de l'application. La console H2 n'est pas nécessaire pour utiliser l'API.
+Les données sont conservées en mémoire et sont perdues à l'arrêt de l'application.
 
 ## Règles métier
 
@@ -52,12 +52,12 @@ Trois tests automatisés d'intégration (classe TaskApiTest, MockMvc) couvrent l
 
 ## Temps passé
 
-À compléter : environ X heures Y minutes (limite fixée à 2 heures).
+Environ 2 heures 30 minutes, soit un dépassement d'environ 30 minutes par rapport à la limite de 2 heures fixée par l'énoncé.
 
 ## Utilisation de l'IA et de la documentation
 
-À compléter avec précision. Exemple de formulation, à adapter à la réalité : un assistant d'IA (Claude) a été utilisé pour proposer l'architecture et du code que j'ai ensuite relu, adapté et testé ; la documentation officielle de Spring a été consultée pour les points de configuration.
+Un assistant d'IA (Claude) a été utilisé pour accélérer le développement du projet, notamment pour l'initialisation et la définition de la structure en couches, pour rechercher et corriger des erreurs (par exemple la configuration du JDK et l'adaptation des imports de test à Spring Boot 4), et pour une meilleure gestion et orientation du travail. Le code a été relu, adapté au projet et vérifié.
 
-## Limites
+## Limites et suite possible
 
-L'API ne propose ni pagination, ni suppression, ni modification du titre ou de la description. Aucun contrôle de concurrence n'est mis en place : deux changements de statut simultanés ne sont pas arbitrés. Le schéma est généré par Hibernate au démarrage, sans outil de migration, et la base n'existe qu'en mémoire. La couverture automatisée se limite aux trois cas exigés.
+L'API ne propose ni pagination, ni suppression, ni modification du titre ou de la description. Aucun contrôle de concurrence n'est mis en place : deux changements de statut simultanés ne sont pas arbitrés. Le schéma est généré par Hibernate au démarrage, sans outil de migration, et la base n'existe qu'en mémoire. La couverture automatisée se limite aux trois cas exigés ; la prochaine étape serait d'ajouter des tests automatisés pour les cas 404, statut inconnu, filtre par statut et transitions valides, aujourd'hui vérifiés manuellement.
